@@ -2,25 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bryant Barrio | Portfolio</title>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #1f2937;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1f2937;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 6px;
+      color: #cbd5e1;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Bryant Barrio</h1>
-  <p>Mechanical Engineering | ARL Research | Computer Vision & Additive Manufacturing</p>
+  <div class="container">
 
-  <h3>Resume / Portfolio</h3>
-  <a href="Barrio_Bryant_Engineering_Portfolio-Master.pdf" target="_blank">
-    View Engineering Portfolio (PDF)
-  </a>
+    <h1>Bryant Barrio</h1>
+    <div class="subtitle">
+      Mechanical Engineering · ARL Research Intern · Computer Vision · Additive Manufacturing
+    </div>
 
-  <hr>
+    <div class="card">
+      <strong>Portfolio / Resume</strong><br>
+      <a href="Barrio_Bryant_Engineering_Portfolio-Master.pdf" target="_blank">
+        View Full Engineering Portfolio (PDF)
+      </a>
+    </div>
 
-  <h3>Projects</h3>
-  <ul>
-    <li>Computer Vision Melt Pool Analysis (YOLO / OpenCV)</li>
-    <li>RideBack Mobility App</li>
-    <li>Candidate Connect Platform</li>
-    <li>Embedded Parking Detection System (ESP32)</li>
-  </ul>
+    <h2>Research Experience</h2>
+    <div class="card">
+      <strong>U.S. Army Research Laboratory (ARL)</strong><br>
+      Computer vision pipelines for 25,000+ additive manufacturing images.<br>
+      Melt pool analysis, defect detection, and quantitative imaging workflows.
+    </div>
+
+    <h2>Projects</h2>
+    <div class="card">
+      <strong>Computer Vision Melt Pool Analysis</strong><br>
+      OpenCV + YOLO-based simulation for defect detection and analysis.
+    </div>
+
+    <div class="card">
+      <strong>Embedded Parking Detection System</strong><br>
+      ESP32-based system with NFC authentication and LED status output.
+    </div>
+
+    <div class="card">
+      <strong>RideBack</strong><br>
+      Student mobility app focused on safe and affordable carpooling.
+    </div>
+
+    <h2>Skills</h2>
+    <div class="card">
+      <span class="tag">Python</span>
+      <span class="tag">OpenCV</span>
+      <span class="tag">SolidWorks</span>
+      <span class="tag">MATLAB</span>
+      <span class="tag">FEA</span>
+      <span class="tag">Embedded Systems</span>
+    </div>
+
+  </div>
 </body>
 </html>
