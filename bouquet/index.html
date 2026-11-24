@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#110d18">
+<title>A little bouquet for you</title>
+<style>
+  :root { color-scheme: dark; --ink:#f7edf4; --muted:#b4a6b6; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; overflow: hidden; display: grid; place-items: center;
+    color: var(--ink); background: radial-gradient(ellipse at 50% 42%, #352238 0%, #1c1422 46%, #100d17 100%);
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+  }
+  .scene { width: min(100vw, 920px); height: min(100svh, 840px); min-height: 540px; position: relative; display: grid; place-items: center; }
+  .glow { position:absolute; width:min(78vw,610px); aspect-ratio:1; border-radius:50%; background:#e66e9d; filter:blur(110px); opacity:.10; }
+  svg { position:relative; z-index:1; width:min(100%,800px); max-height:78vh; overflow:visible; }
+  .bouquet { transform-origin: 400px 540px; animation: sway 6s ease-in-out infinite; }
+  .flower { transform-box: fill-box; transform-origin: center; animation: nod 4s ease-in-out infinite; }
+  .flower:nth-child(2n) { animation-delay:-1.1s; animation-duration:4.6s; }
+  .flower:nth-child(3n) { animation-delay:-2.3s; animation-duration:5.2s; }
+  .heart { position:absolute; z-index:0; bottom:10%; color:#ff96bb; opacity:0; animation: float 8s linear infinite; font-family:system-ui; }
+  .h1 { left:14%; animation-delay:-2s; font-size:20px; }.h2 { left:78%; animation-delay:-6s; font-size:15px; }.h3 { left:27%; animation-delay:-5s; font-size:12px; }.h4 { left:69%; animation-delay:-1s; font-size:22px; }
+  .sparkle { transform-box:fill-box; transform-origin:center; animation: twinkle 2.5s ease-in-out infinite; }
+  .sparkle:nth-of-type(2n) { animation-delay:-1.2s; }
+  .caption { position:absolute; z-index:2; bottom:5.5%; text-align:center; font-size:clamp(1.15rem,3vw,1.55rem); letter-spacing:.08em; color:#f9dbe8; text-shadow:0 0 24px #ee77a077; }
+  .caption small { display:block; margin-top:10px; color:#bcaaba; font: 11px/1.5 system-ui,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+  .credit { position:absolute; z-index:2; bottom:16px; right:18px; color:#9b8c9d; font:11px system-ui,sans-serif; }
+  .credit a { color:#d7bfd3; text-underline-offset:3px; }
+  @keyframes sway { 0%,100%{transform:rotate(-1deg)} 50%{transform:rotate(1.15deg)} }
+  @keyframes nod { 0%,100%{transform:rotate(-2deg) scale(1)} 50%{transform:rotate(2deg) scale(1.025)} }
+  @keyframes float { 0%{transform:translateY(0) scale(.8);opacity:0} 15%{opacity:.75} 85%{opacity:.5} 100%{transform:translateY(-95vh) scale(1.15);opacity:0} }
+  @keyframes twinkle { 0%,100%{opacity:.25;transform:scale(.65)} 50%{opacity:1;transform:scale(1.18)} }
+  @media (max-height:620px) { .scene{min-height:0} svg{max-height:68vh}.caption{bottom:3%} }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important} }
+</style>
+</head>
+<body>
+<main class="scene" aria-label="A softly swaying animated bouquet of flowers">
+  <div class="glow"></div>
+  <span class="heart h1" aria-hidden="true">♥</span><span class="heart h2" aria-hidden="true">♥</span>
+  <span class="heart h3" aria-hidden="true">♥</span><span class="heart h4" aria-hidden="true">♥</span>
+  <svg viewBox="0 0 800 680" role="img" aria-labelledby="title desc">
+    <title id="title">A bouquet of flowers</title><desc id="desc">Colorful daisies and tulips wrapped with a pink ribbon, swaying gently among tiny stars.</desc>
+    <defs>
+      <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff2dc"/><stop offset=".5" stop-color="#f0d3c8"/><stop offset="1" stop-color="#c99aaa"/></linearGradient>
+      <linearGradient id="ribbon" x1="0" x2="1"><stop stop-color="#d65082"/><stop offset=".5" stop-color="#ff9bb5"/><stop offset="1" stop-color="#bb376f"/></linearGradient>
+      <radialGradient id="gold"><stop stop-color="#fff2a6"/><stop offset=".7" stop-color="#e6a844"/><stop offset="1" stop-color="#a96534"/></radialGradient>
+      <radialGradient id="pink"><stop stop-color="#fff0f5"/><stop offset="1" stop-color="#e9649a"/></radialGradient>
+      <radialGradient id="violet"><stop stop-color="#f8eaff"/><stop offset="1" stop-color="#a577d3"/></radialGradient>
+      <radialGradient id="blue"><stop stop-color="#edf7ff"/><stop offset="1" stop-color="#6aafd0"/></radialGradient>
+      <radialGradient id="yellow"><stop stop-color="#fff6c6"/><stop offset="1" stop-color="#f1b83f"/></radialGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+      <g id="daisy">
+        <g fill="currentColor">
+          <ellipse rx="12" ry="30" cy="-27"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(30)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(60)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(90)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(120)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(150)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(180)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(210)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(240)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(270)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(300)"/><ellipse rx="12" ry="30" cy="-27" transform="rotate(330)"/>
+        </g><circle r="17" fill="url(#gold)"/><circle r="5" fill="#fff2b5" opacity=".75"/>
+      </g>
+      <g id="tulip">
+        <path d="M-31 5 Q-34-18-27-40 Q-17-29 0-42 Q17-29 27-40 Q34-16 31 5 Q23 20 0 17 Q-23 20-31 5Z" fill="currentColor" stroke="#ffe8e7" stroke-opacity=".38" stroke-width="2"/>
+        <path d="M0-39 Q4-9 0 16 M-25-32 Q-14-8-9 11 M25-32 Q14-8 9 11" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+      </g>
+    </defs>
+    <g class="sparkle" fill="#ffe1aa"><path d="M113 190l4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/></g>
+    <g class="sparkle" fill="#ffd3e8"><path d="M654 210l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></g>
+    <g class="sparkle" fill="#ffe1aa"><path d="M184 315l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></g>
+    <g class="sparkle" fill="#ffd3e8"><path d="M602 350l4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/></g>
+    <g class="bouquet">
+      <!-- stems -->
+      <g fill="none" stroke="#43845e" stroke-linecap="round" stroke-width="8">
+        <path d="M400 545Q376 370 257 175"/><path d="M402 548Q385 360 345 125"/><path d="M404 548Q406 342 425 150"/><path d="M408 548Q438 370 528 190"/><path d="M396 548Q355 400 190 265"/><path d="M405 548Q450 390 605 270"/>
+        <path d="M396 548Q380 425 300 280"/><path d="M405 548Q423 415 485 285"/><path d="M398 548Q385 440 235 330"/>
+      </g>
+      <!-- leaves -->
+      <g fill="#5f9b69" stroke="#8ec17c" stroke-width="2">
+        <path d="M326 407Q245 350 228 386Q258 442 326 407Z"/><path d="M328 408Q278 387 245 389" fill="none"/>
+        <path d="M452 415Q531 351 548 388Q520 446 452 415Z"/><path d="M452 415Q502 389 531 392" fill="none"/>
+        <path d="M365 462Q294 423 285 453Q318 496 365 462Z"/><path d="M444 465Q511 417 521 450Q488 496 444 465Z"/>
+        <path d="M376 361Q336 304 310 323Q321 368 376 361Z"/><path d="M431 369Q480 305 501 330Q482 375 431 369Z"/>
+      </g>
+      <!-- flowers -->
+      <g class="flower" style="color:#fff4e8"><use href="#daisy" transform="translate(257 170) scale(1.05)"/></g>
+      <g class="flower" style="color:url(#pink)"><use href="#tulip" transform="translate(345 126) scale(.95)"/></g>
+      <g class="flower" style="color:url(#violet)"><use href="#daisy" transform="translate(425 151) scale(.91)"/></g>
+      <g class="flower" style="color:url(#yellow)"><use href="#tulip" transform="translate(528 190) scale(.88)"/></g>
+      <g class="flower" style="color:url(#blue)"><use href="#daisy" transform="translate(190 261) scale(.77)"/></g>
+      <g class="flower" style="color:url(#pink)"><use href="#daisy" transform="translate(605 267) scale(.8)"/></g>
+      <g class="flower" style="color:url(#yellow)"><use href="#daisy" transform="translate(300 276) scale(.64)"/></g>
+      <g class="flower" style="color:#f8e9ff"><use href="#tulip" transform="translate(485 282) scale(.69)"/></g>
+      <g class="flower" style="color:url(#violet)"><use href="#daisy" transform="translate(236 327) scale(.53)"/></g>
+      <!-- little filler blooms -->
+      <g fill="#fff3db"><circle cx="280" cy="220" r="4"/><circle cx="293" cy="201" r="3"/><circle cx="314" cy="241" r="4"/><circle cx="490" cy="227" r="4"/><circle cx="512" cy="242" r="3"/><circle cx="455" cy="235" r="3"/><circle cx="350" cy="226" r="3"/></g>
+      <!-- bouquet wrap -->
+      <path d="M270 325 Q393 370 530 315 L463 558 Q407 589 343 557Z" fill="url(#paper)" stroke="#f8e4df" stroke-width="3"/>
+      <path d="M270 325Q393 376 530 315 M343 557Q403 574 463 558" fill="none" stroke="#fff8ed" stroke-opacity=".8" stroke-width="4"/>
+      <path d="M302 350Q384 409 500 348 M323 424Q388 471 480 411 M343 499Q396 536 463 487" fill="none" stroke="#bd8996" stroke-opacity=".35" stroke-width="2"/>
+      <!-- ribbon -->
+      <path d="M382 465 C335 432 319 471 358 490 C369 496 386 484 400 478 C416 488 433 500 447 485 C478 452 435 436 400 465Z" fill="url(#ribbon)" stroke="#ffc0d3" stroke-width="3"/>
+      <path d="M389 476Q370 517 350 548Q383 540 402 487 M410 480Q430 511 451 541Q423 536 401 489" fill="url(#ribbon)" stroke="#f7a9c4" stroke-width="3"/>
+      <ellipse cx="401" cy="476" rx="12" ry="13" fill="#ee7ea4" stroke="#ffd5e0" stroke-width="2"/>
+    </g>
+  </svg>
+  <div class="caption">a little bouquet for you<small>made with a little code &amp; a lot of heart</small></div>
+  <div class="credit">Inspired by <a href="https://github.com/alishsharma17/Ascii-Flower-Bouquet-" target="_blank" rel="noopener noreferrer">Ascii Flower Bouquet</a> · MIT</div>
+</main>
+</body>
+</html>
